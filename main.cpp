@@ -913,9 +913,9 @@ static void ProcessAudioBuffer(short* buffer, unsigned int samples)
 
 	if (AudioMuted)
 		memset(buffer, 0, samples * 4);
-  else
+	else
 		for (size_t i = 0; i < samples * 2; ++i)
-      buffer[i] = ZL_Math::Clamp<short>(buffer[i] * AudioVolume, -32768, 32767);
+			buffer[i] = ZL_Math::Clamp<short>(buffer[i] * AudioVolume, -32768, 32767);
 }
 
 static bool AudioMix(short* buffer, unsigned int samples, bool need_mix)
